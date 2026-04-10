@@ -11,6 +11,8 @@ use CodeIgniter\View\ViewDecoratorInterface;
  */
 class View extends BaseView
 {
+    public string $appOverridesFolder = APPPATH . 'Views/';
+
     /**
      * When false, the view method will clear the data between each
      * call. This keeps your data safe and ensures there is no accidental

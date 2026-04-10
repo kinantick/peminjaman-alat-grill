@@ -18,9 +18,19 @@ $routes->get('/dashboard', 'DashboardController::index', ['filter' => 'auth']);
 
 //route untuk filter role ke dashboard
 $routes->group('/alat', ['filter' => 'auth'], function($routes){
+    $routes->get('/', 'AlatController::index');
+});
 
-    //admin dan petugas
-    $routes->get('/', 'AlatController::index', ['filter' => 'auth']);
+//route Kategori
+$routes->group('category', ['filter' => 'auth'], function($routes){
+
+    $routes->get('/', 'CategoryController::index');
+    $routes->get('create', 'CategoryController::create', ['filter' => 'role:Admin']);
+    $routes->post('store', 'CategoryController::store', ['filter' => 'role:Admin']);
+    $routes->get('edit/(:num)', 'CategoryController::edit/$1', ['filter' => 'role:Admin']);
+    $routes->post('update/(:num)', 'CategoryController::update/$1', ['filter' => 'role:Admin']);
+    $routes->get('delete/(:num)', 'CategoryController::delete/$1', ['filter' => 'role:Admin']);
+
 });
 
 //route Alat
@@ -30,11 +40,6 @@ $routes->get('/alat/edit/(:num)', 'AlatController::edit/$1', ['filter' => 'role:
 $routes->post('/alat/update/(:num)', 'AlatController::update/$1', ['filter' => 'role:Admin']);
 $routes->get('/alat/delete/(:num)', 'AlatController::delete/$1', ['filter' => 'role:Admin']);
 
-// Trash Alat
-// $routes->get('/alat/trash', 'AlatController::trash', ['filter' => 'role:Admin']);
-// $routes->get('/alat/restore/(:num)', 'AlatController::restore/$1', ['filter' => 'role:Admin']);
-// $routes->get('/alat/permanent-delete/(:num)', 'AlatController::permanentDelete/$1', ['filter' => 'role:Admin']);
-// $routes->get('/alat/empty-trash', 'AlatController::emptyTrash', ['filter' => 'role:Admin']);
 
 //route peminjaman
 $routes->group('peminjaman', ['filter' => 'auth'], function($routes){

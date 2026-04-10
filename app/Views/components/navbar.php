@@ -28,6 +28,12 @@
                     </li>
                 <?php endif; ?>
 
+                <li class="nav-item">
+                    <a class="nav-link <?= ($active ?? '') === 'category' ? 'active' : '' ?>" href="/category">
+                         Kategori
+                    </a>
+                </li>
+
                 <?php if (session()->get('role') === 'Admin'): ?>
                     <li class="nav-item">
                         <a class="nav-link <?= ($active ?? '') === 'user' ? 'active' : '' ?>" href="/user">
@@ -35,6 +41,8 @@
                         </a>
                     </li>
                 <?php endif; ?>
+
+
 
                 <?php if (session()->get('role') === 'Admin'): ?>
                     <li class="nav-item">
