@@ -61,7 +61,7 @@
 
         <!-- Statistik Cards -->
         <div class="row g-4 mb-4">
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="card stat-card border-0 shadow-sm bg-success text-white">
                     <div class="card-body text-center">
                         <i class="bi bi-box-seam stat-icon"></i>
@@ -70,7 +70,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="card stat-card border-0 shadow-sm bg-primary text-white">
                     <div class="card-body text-center">
                         <i class="bi bi-check-circle stat-icon"></i>
@@ -79,7 +79,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="card stat-card border-0 shadow-sm bg-warning text-white">
                     <div class="card-body text-center">
                         <i class="bi bi-hourglass-split stat-icon"></i>
@@ -93,7 +93,7 @@
         <!-- Status Peminjaman Detail -->
         <div class="row g-4 mb-4">
             <div class="col-md-6">
-                <div class="card border-0 shadow-sm">
+                <div class="card border-0 shadow-lg">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
@@ -109,7 +109,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="card border-0 shadow-sm">
+                <div class="card border-0 shadow-lg">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
