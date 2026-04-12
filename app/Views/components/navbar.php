@@ -17,7 +17,7 @@
                 <?php if (session()->get('role') === 'Peminjam'): ?>
                     <li class="nav-item">
                         <a class="nav-link <?= ($active ?? '') === 'alat-tersedia' ? 'active' : '' ?>" href="/alat">
-                             Alat Tersedia
+                             Daftar Alat
                         </a>
                     </li>
                 <?php else: ?>

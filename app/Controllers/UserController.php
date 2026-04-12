@@ -43,6 +43,24 @@ class UserController extends BaseController
             return redirect()->to('/dashboard')->with('error', 'Akses ditolak!');
         }
 
+        $rules = [
+        'nama' => 'required',
+        'email' => [
+            'rules' => 'required|valid_email|is_unique[users.email]',
+            'errors' => [
+                'required' => 'Email wajib diisi!',
+                'valid_email' => 'Format email tidak valid!',
+                'is_unique' => 'Email sudah digunakan!'
+            ]
+        ],
+        'password' => 'required',
+        'role_user' => 'required'
+        ];
+
+        if (!$this->validate($rules)) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+
         $userModel = new UserModel();
 
         $id = $userModel->insert([

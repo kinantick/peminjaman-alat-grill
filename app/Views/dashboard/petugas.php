@@ -125,44 +125,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Menu Petugas -->
-        <div class="card border-0 shadow-sm">
-            <div class="card-header bg-white border-0 pt-4">
-                <h5 class="mb-0"><i class="bi bi-grid-3x3-gap"></i> Menu Utama</h5>
-            </div>
-            <div class="card-body p-4">
-                <div class="row g-4">
-                    <div class="col-md-4">
-                        <a href="/peminjaman" class="menu-card bg-warning">
-                            <div class="text-center">
-                                <i class="bi bi-clipboard-check" style="font-size: 3rem;"></i>
-                                <h5 class="mt-3 mb-0">Kelola Peminjaman</h5>
-                                <small>Validasi & pengembalian</small>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-4">
-                        <a href="/alat" class="menu-card bg-success">
-                            <div class="text-center">
-                                <i class="bi bi-box-seam" style="font-size: 3rem;"></i>
-                                <h5 class="mt-3 mb-0">Data Alat</h5>
-                                <small>Lihat data alat</small>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-4">
-                        <a href="/user" class="menu-card bg-primary">
-                            <div class="text-center">
-                                <i class="bi bi-people" style="font-size: 3rem;"></i>
-                                <h5 class="mt-3 mb-0">Data User</h5>
-                                <small>Lihat data pengguna</small>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

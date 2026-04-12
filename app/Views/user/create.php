@@ -16,6 +16,14 @@
 
             <h4 class="mb-4">Tambah User</h4>
 
+            <?php if (session()->get('errors')): ?>
+                <div style="color:red;">
+                    <?php foreach (session()->get('errors') as $error): ?>
+                        <p><?= $error ?></p>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
+
             <form action="/user/store" method="post">
 
                 <div class="mb-3">

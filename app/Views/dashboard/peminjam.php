@@ -81,6 +81,28 @@
             </div>
         </div>
 
+        <!-- Quick Actions -->
+        <?php if ($peminjamanDisetujui > 0): ?>
+        <div class="card border-0 shadow-sm mt-4 border-start border-primary border-4">
+            <div class="card-body">
+                <div class="d-flex align-items-center">
+                    <div class="flex-grow-1">
+                        <h6 class="mb-1"><i class="bi bi-exclamation-circle text-primary"></i> Pengingat</h6>
+                        <p class="mb-0 small text-muted">
+                            Anda memiliki <strong><?= $peminjamanDisetujui ?></strong> peminjaman aktif. 
+                            Jangan lupa untuk mengembalikan alat tepat waktu!
+                        </p>
+                    </div>
+                    <div>
+                        <a href="/peminjaman" class="btn btn-primary">
+                            <i class="bi bi-eye"></i> Lihat Detail
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php endif; ?>
+
         <!-- Statistik Cards -->
         <div class="row g-4 mb-4">
             <div class="col-md-3">
@@ -156,66 +178,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Menu Peminjam -->
-        <div class="card border-0 shadow-sm">
-            <div class="card-header bg-white border-0 pt-4">
-                <h5 class="mb-0"><i class="bi bi-grid-3x3-gap"></i> Menu Utama</h5>
-            </div>
-            <div class="card-body p-4">
-                <div class="row g-4">
-                    <div class="col-md-4">
-                        <a href="/alat" class="menu-card bg-success">
-                            <div class="text-center">
-                                <i class="bi bi-box-seam" style="font-size: 3rem;"></i>
-                                <h5 class="mt-3 mb-0">Alat Tersedia</h5>
-                                <small>Lihat alat yang bisa dipinjam</small>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-4">
-                        <a href="/peminjaman/create" class="menu-card bg-primary">
-                            <div class="text-center">
-                                <i class="bi bi-plus-circle" style="font-size: 3rem;"></i>
-                                <h5 class="mt-3 mb-0">Ajukan Peminjaman</h5>
-                                <small>Buat pengajuan baru</small>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-4">
-                        <a href="/peminjaman" class="menu-card bg-warning">
-                            <div class="text-center">
-                                <i class="bi bi-clipboard-check" style="font-size: 3rem;"></i>
-                                <h5 class="mt-3 mb-0">Peminjaman Saya</h5>
-                                <small>Lihat status peminjaman</small>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Quick Actions -->
-        <?php if ($peminjamanDisetujui > 0): ?>
-        <div class="card border-0 shadow-sm mt-4 border-start border-primary border-4">
-            <div class="card-body">
-                <div class="d-flex align-items-center">
-                    <div class="flex-grow-1">
-                        <h6 class="mb-1"><i class="bi bi-exclamation-circle text-primary"></i> Pengingat</h6>
-                        <p class="mb-0 small text-muted">
-                            Anda memiliki <strong><?= $peminjamanDisetujui ?></strong> peminjaman aktif. 
-                            Jangan lupa untuk mengembalikan alat tepat waktu!
-                        </p>
-                    </div>
-                    <div>
-                        <a href="/peminjaman" class="btn btn-primary">
-                            <i class="bi bi-eye"></i> Lihat Detail
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <?php endif; ?>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

@@ -147,53 +147,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Menu Admin -->
-        <div class="card border-0 shadow-sm">
-            <div class="card-header bg-white border-0 pt-4">
-                <h5 class="mb-0"><i class="bi bi-grid-3x3-gap"></i> Menu Utama</h5>
-            </div>
-            <div class="card-body p-4">
-                <div class="row g-4">
-                    <div class="col-md-3">
-                        <a href="/user" class="menu-card bg-primary">
-                            <div class="text-center">
-                                <i class="bi bi-people" style="font-size: 3rem;"></i>
-                                <h5 class="mt-3 mb-0">Kelola User</h5>
-                                <small>Manajemen pengguna</small>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3">
-                        <a href="/alat" class="menu-card bg-success">
-                            <div class="text-center">
-                                <i class="bi bi-box-seam" style="font-size: 3rem;"></i>
-                                <h5 class="mt-3 mb-0">Kelola Alat</h5>
-                                <small>Manajemen alat</small>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3">
-                        <a href="/peminjaman" class="menu-card bg-warning">
-                            <div class="text-center">
-                                <i class="bi bi-clipboard-check" style="font-size: 3rem;"></i>
-                                <h5 class="mt-3 mb-0">Peminjaman</h5>
-                                <small>Data peminjaman</small>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3">
-                        <a href="/activity-log" class="menu-card bg-info">
-                            <div class="text-center">
-                                <i class="bi bi-clock-history" style="font-size: 3rem;"></i>
-                                <h5 class="mt-3 mb-0">Activity Log</h5>
-                                <small>Riwayat aktivitas</small>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
