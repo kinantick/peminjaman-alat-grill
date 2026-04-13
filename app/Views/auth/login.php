@@ -51,6 +51,19 @@
                 <button type="submit" class="btn btn-primary w-100">
                     Login
                 </button>
+
+                <br><br>
+
+                <!-- Info Box -->
+                <div class="info-box">
+                    <div class="row align-items-center">
+                        <div class="col-md-11">
+                            <p class="mb-0 small" style="color: #495057;">
+                                Bila belum memiliki akun, silahkan daftar melalui admin.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </form>
 
         </div>
