@@ -59,7 +59,9 @@
                     <div class="row align-items-center">
                         <div class="col-md-11">
                             <p class="mb-0 small" style="color: #495057;">
-                                Bila belum memiliki akun, silahkan daftar melalui admin.
+                                Bila belum memiliki akun, silahkan daftar melalui <a href="https://wa.me/6285795176709" target="_blank">
+                                    Admin
+                                </a>.
                             </p>
                         </div>
                     </div>
