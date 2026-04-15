@@ -62,19 +62,21 @@ class CategoryController extends BaseController
     }
 
     public function delete($id)
-{
-    $categoryModel = new \App\Models\CategoryModel();
-    $alatModel = new \App\Models\AlatModel();
+    {
+        $categoryModel = new \App\Models\CategoryModel();
+        $alatModel = new \App\Models\AlatModel();
 
-    if ($alatModel->where('id_category', $id)->countAllResults() > 0) {
-        return redirect()->back()->with('error', 'Kategori tidak bisa dihapus karena masih ada data alat dengan kategori ini!');
-    }
+        if ($alatModel->where('id_category', $id)->countAllResults() > 0) {
+            return redirect()->back()->with('error', 'Kategori tidak bisa dihapus karena masih ada data alat dengan kategori ini!');
+        }
 
-    try {
-        $categoryModel->delete($id);
-        return redirect()->back()->with('success', 'Kategori berhasil dihapus!');
-    } catch (\Exception $e) {
-        return redirect()->back()->with('error', 'Gagal menghapus kategori!');
+        try {
+            $categoryModel->delete($id);
+            return redirect()->back()->with('success', 'Kategori berhasil dihapus!');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Gagal menghapus kategori!');
+        }
+
+
     }
-}
-}
+    }

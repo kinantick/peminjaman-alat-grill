@@ -46,7 +46,7 @@ class UserController extends BaseController
         $rules = [
         'nama' => 'required',
         'email' => [
-            'rules' => 'required|valid_email|is_unique[users.email]',
+            'rules' => 'required|valid_email|is_unique[user.email]',
             'errors' => [
                 'required' => 'Email wajib diisi!',
                 'valid_email' => 'Format email tidak valid!',
@@ -119,6 +119,15 @@ class UserController extends BaseController
 
         $userModel = new UserModel();
         $user = $userModel->find($id);
+        $peminjamanModel = new \App\Models\PeminjamanModel();
+
+        if ($peminjamanModel
+            ->where('id_user', $id)
+            ->whereNotIn('status', ['Selesai', 'Ditolak'])
+            ->countAllResults() > 0) {
+            
+            return redirect()->back()->with('error', 'User tidak bisa dihapus karena masih memiliki peminjaman aktif!');
+        }
 
         $userModel->delete($id);
 

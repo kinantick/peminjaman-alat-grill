@@ -16,7 +16,7 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <h4 class="mb-0"><i class="bi bi-clipboard-check"></i> Data Peminjaman</h4>
-                        <?php if (session()->get('role') === 'Peminjam'): ?>
+                        <?php if (session()->get('role') === 'Peminjam' || (session()->get('role') === 'Admin')): ?>
                         <a href="/peminjaman/create" class="btn btn-success btn-sm">
                             <i class="bi bi-plus-circle"></i> Ajukan Peminjaman
                         </a>

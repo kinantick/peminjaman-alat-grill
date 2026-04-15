@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\PeminjamanModel;
 use App\Models\AlatModel;
+use App\Models\UserModel;
 use CodeIgniter\HTTP\ResponseInterface;
 
 class PeminjamanController extends BaseController
@@ -46,12 +47,39 @@ class PeminjamanController extends BaseController
     {
         $peminjamanModel = new PeminjamanModel();
         $alatModel = new AlatModel();
+        $userModel = new UserModel();
+        $role = session()->get('role');
+
+        if ($role === 'Admin') {
+            $email = $this->request->getPost('email');
+            $nama  = $this->request->getPost('nama');
+
+            // cek user
+            $user = $userModel->where('email', $email)->first();
+
+        if (!$user) {
+            // buat user baru
+            $userModel->save([
+                'nama' => $nama,
+                'email' => $email,
+                'password' => password_hash('123456', PASSWORD_DEFAULT),
+                'role_user' => 'Peminjam'
+            ]);
+
+            $user = $userModel->where('email', $email)->first();
+        }
+
+        $id_user = $user['id_user'];
+
+        } else {
+            // kalau peminjam biasa
+            $id_user = session()->get('id_user');
+        }
 
         $id_alat = $this->request->getPost('id_alat');
         $jumlah = (int) $this->request->getPost('jumlah');
         $durasi_pinjam = (int) $this->request->getPost('durasi_pinjam');
         $tanggal_pinjam = $this->request->getPost('tanggal_pinjam');
-        $id_user = session()->get('id_user');
 
         $alat = $alatModel->find($id_alat);
 

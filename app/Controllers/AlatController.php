@@ -92,11 +92,20 @@ class AlatController extends BaseController
     {
         $alatModel = new AlatModel();
         $alat = $alatModel->find($id);
+        $peminjamanModel = new \App\Models\PeminjamanModel();
+
+        if ($peminjamanModel
+            ->where('id_alat', $id)
+            ->whereNotIn('status', ['Selesai', 'Ditolak'])
+            ->countAllResults() > 0) {
+
+            return redirect()->back()->with('error', 'Alat tidak bisa dihapus karena sedang dipinjam!');
+        }
         
         $alatModel->delete($id);
 
-        log_activity('Memindahkan alat ke trash: ' . $alat['nama_alat'], $id);
+        log_activity('Menghapus alat : ' . $alat['nama_alat'], $id);
 
-        return redirect()->to('/alat')->with('success', 'Alat berhasil dipindahkan ke trash');
+        return redirect()->to('/alat')->with('success', 'Alat berhasil dihapus');
     }
 }

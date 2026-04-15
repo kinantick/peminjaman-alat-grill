@@ -8,33 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/dashboard">Sistem Peminjaman Alat</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/dashboard">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/alat/tersedia">Alat Tersedia</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/peminjaman">Peminjaman</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/profile">Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/logout">Logout</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <?= view('components/navbar', ['active' => 'profile']) ?>
 
     <div class="container mt-5">
         <div class="row justify-content-center">
@@ -52,6 +26,19 @@
                         <?php endif; ?>
 
                         <form action="/peminjaman/store" method="post" id="formPeminjaman">
+                            <!-- Admin buat user -->
+                            <?php if (session()->get('role') === 'Admin'): ?>
+                                <div class="mb-3">
+                                    <label class="form-label">Nama Peminjam</label>
+                                    <input type="text" name="nama" class="form-control" placeholder="Masukkan nama peminjam" required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label">Email Peminjam</label>
+                                    <input type="email" name="email" class="form-control" placeholder="Masukkan email peminjam" required>
+                                </div>
+                            <?php endif; ?>
+
                             <!-- Pilih Alat -->
                             <div class="mb-3">
                                 <label class="form-label"><i class="bi bi-box-seam"></i> Pilih Alat <span class="text-danger">*</span></label>
